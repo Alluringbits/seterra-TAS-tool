@@ -1,5 +1,5 @@
 try:
-        import pytesseract, pyautogui, time, difflib, re, os.path, sys
+        import pytesseract, pyautogui, time, difflib, re, os.path
         from pynput.mouse import Listener
         from PIL import ImageGrab
         import tkinter as tk
