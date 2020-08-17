@@ -15,12 +15,10 @@ x0, x1, y0, y1, z0, z1 = 0, 0, 0, 0, 0, 0
 word = None
 
 if not os.path.exists(f"{open('Tesseract_location.txt', 'r+').read()}"):
-        print("The Tesseract exe file doesn't exist OR the directory of the file is different than the default one (C:\\Program Files\\Tesseract-OCR\\tesseract.exe). Please change the directory to the appropriate one in the 'Tesseract_location.txt' file.")
+        print("The Tesseract exe file doesn't exist OR the directory of the file is different than the default one (C:\\Program Files\\Tesseract-OCR\\tesseract.exe for Windows Users). Please change the directory to the appropriate one in the 'Tesseract_location.txt' file.")
         quit()
-try:
-        pytesseract.pytesseract.tesseract_cmd = f"{open('Tesseract_location.txt', 'r+').read()}"
-except pytesseract.pytesseract.TesseractNotFoundError as PytesseractMissing:
-        print("ERROR\nEither you didn't install Tesseract-OCR or 'str({PytesseractMissing}).replace(\"is not installed or it's not in your PATH\", \"\")' isn't the correct path for the Tesseract-OCR exe.")
+        
+pytesseract.pytesseract.tesseract_cmd = f"{open('Tesseract_location.txt', 'r+').read()}"
 
 window = tk.Tk()
 def setbox1():
@@ -64,6 +62,8 @@ def GetWords():
                 word = "".join(i for i in word if not i.isdigit())
         except SystemError:
                 print("The selected box is invalid. The order of the two positions is first the top left corner of the box, secondly the bottom right corner. The first always has to be above the second in terms of height")
+        except pytesseract.pytesseract.TesseractNotFoundError as PytesseractMissing:
+                print("ERROR\nEither you didn't install Tesseract-OCR or 'str({PytesseractMissing}).replace(\"is not installed or it's not in your PATH\", \"\")' isn't the correct path for the Tesseract-OCR exe.")
         
 def complete_map():
         try:
