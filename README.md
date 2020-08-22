@@ -19,7 +19,7 @@ To install the remaining packages use the command:
 pip3 install pytesseract pyautogui pynput pillow
 ```
 Pytesseract requires Tesseract-OCR to be installed, which is an external software that can be installed following the instructions in the [official Tesseract Github repository](https://github.com/tesseract-ocr/tesseract) .
-After the Installation it is **Fundamental** to check that the location of the Tesseract.exe file needed for the script to run is the same of the one written in the  `Tesseract_location.txt` text file; if it's not the same then edit the file writing the appropriate directory (Note: Double backlashes `\\` must be used). The default directory in the script is the default Windows directory for the .exe file, which is `C:\\Program Files\\Tesseract-OCR\\tesseract.exe`.
+After the Installation it is **Fundamental** to check that the location of the Tesseract.exe file needed for the script to run is the same of the one written in the  `Tesseract_location.txt` text file; if it's not the same then edit the file writing the appropriate directory (Note: Double backlashes `\\` must be used). The default directory in the script is the default Windows directory for the .exe file, which is `C:\\Program Files\\Tesseract-OCR\\tesseract.exe`. For Linux users the default directory should be `/usr/bin/tesseract`.
 
 As for `tkinter` it cannot be simply installed with pip. It's the library that allows the GUI and it can be installed following the [Instructions](https://tkdocs.com/tutorial/install.html) on the docs page for your operative system and for python, choosing the latest version.
 
@@ -54,4 +54,4 @@ It's fairly simple to use. When you run the script after all the packages have b
 I also made a quick video to explain and demonstrate the script, click this [Link](https://youtu.be/psO7mF0Mgrc) to watch it.
 
 ## Additional Notes:
-The script increases of performance with faster CPUs as Tesseract relies on it to read and analyze images, also it's probably really inefficient in terms of how it's written and it could be definitely optimized by anyone better than me at python.
+The script increases of performance with faster CPUs as Tesseract relies on it to read and analyze images; tesseract will also have problems if the resolution of your screen is too low and the words are too small. The script is probably really inefficient in terms of how it's written and it could be definitely optimized by anyone better than me at python. 
