@@ -3,7 +3,8 @@ A TAS tool for Seterra Map quiz games.
 
 This is a tool made for fun that semi-automatically completes a Seterra map quiz. It requires an initial user input and uses Tesseract-OCR with pyautogui to automatically click the locations.
 
-Table of Contents:
+
+## Table of Contents:
 - [How it works](#how-it-works)
 - [Installation](#installation)
 - [Ussage](#ussage)
