@@ -30,7 +30,7 @@ Pytesseract requires Tesseract-OCR to be installed, which is an external softwar
 After the Installation it is **Fundamental** to check that the location of the Tesseract.exe file needed for the script to run is the same of the one written in the  `Tesseract_location.txt` text file; if it's not the same then edit the file writing the appropriate directory (Note: Double backlashes `\\` must be used). The default directory in the script is the default Windows directory for the .exe file, which is `C:\\Program Files\\Tesseract-OCR\\tesseract.exe`. For Linux users the default directory should be `/usr/bin/tesseract`.
 
 As for `tkinter` it cannot be simply installed with pip. It's the library that allows the GUI and it can be installed following the [Instructions](https://tkdocs.com/tutorial/install.html) on the docs page for your operative system and for python, choosing the latest version.
-<a name="usage"></a>
+<a name="ussage"></a>
 ## Usage:
 To Run the script just open a console in the folder where the files have been downloaded and do:
 ```
