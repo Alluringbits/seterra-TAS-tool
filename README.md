@@ -1,11 +1,20 @@
 # seterra-TAS-tool
 A TAS tool for Seterra Map quiz games.
 
-This is a tool made for fun that semi automatically completes a Seterra map quiz. It requires an initial user input and uses Tesseract-OCR with pyautogui to automatically click the locations.
+This is a tool made for fun that semi-automatically completes a Seterra map quiz. It requires an initial user input and uses Tesseract-OCR with pyautogui to automatically click the locations.
 
+
+## Table of Contents:
+- [How it works](#how-it-works)
+- [Installation](#installation)
+- [Ussage](#ussage)
+- [Video Explanation](#video-explanation)
+- [Additional Notes](#additional-notes)
+
+<a name="how-it-works"></a>
 ## How it works:
 As of now it is quite inefficient as it requires the user to do the quiz first. Essentially, since screen resolutions and browser zoom varies among computers, a fixed set of coordinates that works for everyone cannot be made. Hence, I decided to make it so that the user completes the map quiz first, then the script registers all the values and next it completes the quiz by reading the "Click on " part with Tesseract-OCR and using pyautogui to click on the screen coordinates that were previously registered and were associated with the country name values. To make it more User friendly I decided to implement a very basic GUI using tkinter.
-
+<a name="installation"></a>
 ## Installation:
 (Python 3 is required)
 
@@ -22,14 +31,22 @@ Pytesseract requires Tesseract-OCR to be installed, which is an external softwar
 After the Installation it is **Fundamental** to check that the location of the Tesseract.exe file needed for the script to run is the same of the one written in the  `Tesseract_location.txt` text file; if it's not the same then edit the file writing the appropriate directory (Note: Double backlashes `\\` must be used). The default directory in the script is the default Windows directory for the .exe file, which is `C:\\Program Files\\Tesseract-OCR\\tesseract.exe`. For Linux users the default directory should be `/usr/bin/tesseract`.
 
 As for `tkinter` it cannot be simply installed with pip. It's the library that allows the GUI and it can be installed following the [Instructions](https://tkdocs.com/tutorial/install.html) on the docs page for your operative system and for python, choosing the latest version.
-
+<a name="ussage"></a>
 ## Usage:
 To Run the script just open a console in the folder where the files have been downloaded and do:
 ```
 python Seterra_TAS.py
 ```
-It's fairly simple to use. When you run the script after all the packages have been installed and set up properly, a window with some buttons will appear. Before explaining the various function, an explanation of the whole procedure is needed. The first thing the user has to do is seelecting the "box", a rectangle that surrounds the "click on " part of the seterra quiz **Including** a wide space, wide enough to fit all the possible words in the quiz; this box is needed as it's what Tesseract will read to know which country to click on. Afterwards the position of the Restart button must be given. After all this the procedure of registering the various coordinates begins and the user has to complete the quiz; if you made mistakes in the quiz during this procedure it's completely fine, the script has enough resilience so that you can generally make as many mistakes as you want and it'll still work in the end (Note: It's important that you **do not click too fast** as the script might not detect some clicks, making the script not work during the completion phase). Finished this phase, after clicking "Ok" on the first quiz test results, the script can start to automatically complete the quiz. ***It is important that you NEVER scroll down, move the browser window or put another window above the "click on" and "Restart" parts of the quiz at any point from the selection of the box to the completion of the map***. The meanings of the buttons are:
-- Position 1: It's the first button you have to press. After you press this button you will need to click on the **top left corner** of the box.
+Once you have run the script (assuming all previous steps have been completed), a window with containing buttons will appear:
+https://imgur.com/a/MTmY6tl  
+
+The first thing the user has to do is selecting the "box", a rectangle that surrounds the "click on " part of the seterra quiz **Including** a wide space, wide enough to fit all the possible words in the quiz; this box is needed as it's what Tesseract will read to know which country to click on. 
+
+Afterwards the position of the **Restart** button must be given. After all this, the procedure of registering the various coordinates begins and the user must complete the quiz. The script has enough resilience that you can generally make as many mistakes as needed, without any complications. (Note: It's important that you **do not click too fast** as the script might not detect some clicks, making the script obsolete during the completion phase). 
+
+Once you are done with the quiz, you should click "Play Again". After this, the script can start to automatically complete the quiz. ***It is important that you NEVER scroll down, move the browser window or put another window above the "click on" and "Restart" parts of the quiz at any point from the selection of the box to the completion of the map***. The meanings of the buttons are:
+
+- Position 1: The first button you have to press. After you press this button you will need to click on the **top left corner** of the box.
 
  ![Step1](https://i.imgur.com/gBMEkL2.png)
 - Position 2: It's the second button you have to press. After you press this button you will need to click on the **bottom right corner** of the box, it must not be above the coordinates you clicked for Position 1.
@@ -50,8 +67,9 @@ It's fairly simple to use. When you run the script after all the packages have b
 - Debug: A developer option. It'll print values on the console needed for debugging.
 
 ![Step7](https://i.imgur.com/MBh0cet.png)
+<a name="video-explanation"></a>
 ## Video Explanation:
 I also made a quick video to explain and demonstrate the script, click this [Link](https://youtu.be/psO7mF0Mgrc) to watch it.
-
+<a name="additional-notes"></a>
 ## Additional Notes:
 The script increases of performance with faster CPUs as Tesseract relies on it to read and analyze images; tesseract will also have problems if the resolution of your screen is too low and the words are too small. The script is probably really inefficient in terms of how it's written and it could be definitely optimized by anyone better than me at python. 
