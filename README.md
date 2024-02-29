@@ -4,12 +4,13 @@ A TAS tool for Seterra Map quiz games.
 This is a tool made for fun that semi-automatically completes a Seterra map quiz. It requires an initial user input and uses Tesseract-OCR with pyautogui to automatically click the locations.
 
 Table of Contents:
-- How it works
+- [How it works](#how-it-works)
 - Installation
 - Ussage
 - Video Explanation
 - Additional Notes
 
+<a name="how-it-works"></a>
 ## How it works:
 As of now it is quite inefficient as it requires the user to do the quiz first. Essentially, since screen resolutions and browser zoom varies among computers, a fixed set of coordinates that works for everyone cannot be made. Hence, I decided to make it so that the user completes the map quiz first, then the script registers all the values and next it completes the quiz by reading the "Click on " part with Tesseract-OCR and using pyautogui to click on the screen coordinates that were previously registered and were associated with the country name values. To make it more User friendly I decided to implement a very basic GUI using tkinter.
 
