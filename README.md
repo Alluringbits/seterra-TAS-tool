@@ -1,7 +1,7 @@
 # seterra-TAS-tool
 A TAS tool for Seterra Map quiz games.
 
-This is a tool made for fun that semi automatically completes a Seterra map quiz. It requires an initial user input and uses Tesseract-OCR with pyautogui to automatically click the locations.
+This is a tool made for fun that semi-automatically completes a Seterra map quiz. It requires an initial user input and uses Tesseract-OCR with pyautogui to automatically click the locations.
 
 ## How it works:
 As of now it is quite inefficient as it requires the user to do the quiz first. Essentially, since screen resolutions and browser zoom varies among computers, a fixed set of coordinates that works for everyone cannot be made. Hence, I decided to make it so that the user completes the map quiz first, then the script registers all the values and next it completes the quiz by reading the "Click on " part with Tesseract-OCR and using pyautogui to click on the screen coordinates that were previously registered and were associated with the country name values. To make it more User friendly I decided to implement a very basic GUI using tkinter.
@@ -28,8 +28,16 @@ To Run the script just open a console in the folder where the files have been do
 ```
 python Seterra_TAS.py
 ```
-It's fairly simple to use. When you run the script after all the packages have been installed and set up properly, a window with some buttons will appear. Before explaining the various function, an explanation of the whole procedure is needed. The first thing the user has to do is seelecting the "box", a rectangle that surrounds the "click on " part of the seterra quiz **Including** a wide space, wide enough to fit all the possible words in the quiz; this box is needed as it's what Tesseract will read to know which country to click on. Afterwards the position of the Restart button must be given. After all this the procedure of registering the various coordinates begins and the user has to complete the quiz; if you made mistakes in the quiz during this procedure it's completely fine, the script has enough resilience so that you can generally make as many mistakes as you want and it'll still work in the end (Note: It's important that you **do not click too fast** as the script might not detect some clicks, making the script not work during the completion phase). Finished this phase, after clicking "Ok" on the first quiz test results, the script can start to automatically complete the quiz. ***It is important that you NEVER scroll down, move the browser window or put another window above the "click on" and "Restart" parts of the quiz at any point from the selection of the box to the completion of the map***. The meanings of the buttons are:
-- Position 1: It's the first button you have to press. After you press this button you will need to click on the **top left corner** of the box.
+Once you have run the script (assuming all previous steps have been completed), a window with containing buttons will appear:
+https://imgur.com/a/MTmY6tl  
+
+The first thing the user has to do is selecting the "box", a rectangle that surrounds the "click on " part of the seterra quiz **Including** a wide space, wide enough to fit all the possible words in the quiz; this box is needed as it's what Tesseract will read to know which country to click on. 
+
+Afterwards the position of the **Restart** button must be given. After all this, the procedure of registering the various coordinates begins and the user must complete the quiz. The script has enough resilience that you can generally make as many mistakes as needed, without any complications. (Note: It's important that you **do not click too fast** as the script might not detect some clicks, making the script obsolete during the completion phase). 
+
+Once you are done with the quiz, you should click "Play Again". After this, the script can start to automatically complete the quiz. ***It is important that you NEVER scroll down, move the browser window or put another window above the "click on" and "Restart" parts of the quiz at any point from the selection of the box to the completion of the map***. The meanings of the buttons are:
+
+- Position 1: The first button you have to press. After you press this button you will need to click on the **top left corner** of the box.
 
  ![Step1](https://i.imgur.com/gBMEkL2.png)
 - Position 2: It's the second button you have to press. After you press this button you will need to click on the **bottom right corner** of the box, it must not be above the coordinates you clicked for Position 1.
