@@ -5,15 +5,15 @@ This is a tool made for fun that semi-automatically completes a Seterra map quiz
 
 Table of Contents:
 - [How it works](#how-it-works)
-- Installation
-- Ussage
-- Video Explanation
-- Additional Notes
+- [Installation](#installation)
+- [Ussage](#ussage)
+- [Video Explanation](#video-explanation)
+- [Additional Notes](#additional-notes)
 
 <a name="how-it-works"></a>
 ## How it works:
 As of now it is quite inefficient as it requires the user to do the quiz first. Essentially, since screen resolutions and browser zoom varies among computers, a fixed set of coordinates that works for everyone cannot be made. Hence, I decided to make it so that the user completes the map quiz first, then the script registers all the values and next it completes the quiz by reading the "Click on " part with Tesseract-OCR and using pyautogui to click on the screen coordinates that were previously registered and were associated with the country name values. To make it more User friendly I decided to implement a very basic GUI using tkinter.
-
+<a name="installation"></a>
 ## Installation:
 (Python 3 is required)
 
@@ -30,7 +30,7 @@ Pytesseract requires Tesseract-OCR to be installed, which is an external softwar
 After the Installation it is **Fundamental** to check that the location of the Tesseract.exe file needed for the script to run is the same of the one written in the  `Tesseract_location.txt` text file; if it's not the same then edit the file writing the appropriate directory (Note: Double backlashes `\\` must be used). The default directory in the script is the default Windows directory for the .exe file, which is `C:\\Program Files\\Tesseract-OCR\\tesseract.exe`. For Linux users the default directory should be `/usr/bin/tesseract`.
 
 As for `tkinter` it cannot be simply installed with pip. It's the library that allows the GUI and it can be installed following the [Instructions](https://tkdocs.com/tutorial/install.html) on the docs page for your operative system and for python, choosing the latest version.
-
+<a name="usage"></a>
 ## Usage:
 To Run the script just open a console in the folder where the files have been downloaded and do:
 ```
@@ -66,8 +66,9 @@ Once you are done with the quiz, you should click "Play Again". After this, the 
 - Debug: A developer option. It'll print values on the console needed for debugging.
 
 ![Step7](https://i.imgur.com/MBh0cet.png)
+<a name="video-explanation"></a>
 ## Video Explanation:
 I also made a quick video to explain and demonstrate the script, click this [Link](https://youtu.be/psO7mF0Mgrc) to watch it.
-
+<a name="additional-notes"></a>
 ## Additional Notes:
 The script increases of performance with faster CPUs as Tesseract relies on it to read and analyze images; tesseract will also have problems if the resolution of your screen is too low and the words are too small. The script is probably really inefficient in terms of how it's written and it could be definitely optimized by anyone better than me at python. 
